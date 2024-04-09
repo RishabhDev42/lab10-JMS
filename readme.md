@@ -11,8 +11,8 @@ Task 1 just requires cloning a GitHub repository directly into IntelliJ.
 3. Paste the GitHub repository URL into the dialog box (change the Directory if you like) and select "Clone".
 4. When asked whether to "Trust Maven Project", click "Trust Project".
 5. A popup window may say "Frameworks Detected", but you can ignore and close it.
-6. Once the project has fully loaded, click on Run, and you should eventually be sent to a browser with the URL `http://localhost:8080/lab-10/`  
-(You may run into configuration issues to resolve regarding choosing your level of Java and TomEE.  Adjust them to fit your configuration.)
+6. Once the project has fully loaded, you will have two subdirectories in the Project window - one labeled **mdb**, which contains MyQueueListenter, and one labeled **web**, which contains MyQueueWriter. Click on Run, and you should eventually be sent to a browser with the URL `http://localhost:8080/lab-10/`  
+(You may run into configuration issues to resolve regarding choosing your level of Java and TomEE - for example, you may have a new version of TomEE. Adjust them to fit your configuration.)
 7. In the browser, enter a message in the input box, replacing "Enter text here", and click on "Submit text to servlet".
 8. You should get a message that your text has been written to the queue.
 9. Look at the IntelliJ TomEE console and you should see two messages
@@ -22,8 +22,8 @@ Task 1 just requires cloning a GitHub repository directly into IntelliJ.
 What you have running is shown in the following diagram:
  ![Task 1 Flow](diagrams/task1.png)        
 
-**_Code is poetry._**  
-Study the code in the MyQueueWriter as a poem, understanding the meaning of each line.
+**_Read the code._**  
+Study the code in the MyQueueWriter, understanding the meaning of each line.
  - What class does MyQueueWriter extend? (You have worked with those before.)  
  - By reading the comments and the code, note how the JMS architecture is used as described in the diagrams in class this week.  (You can refer back to the diagrams from the class slides also.)
 
@@ -53,12 +53,16 @@ Finally, we will create a second Servlet that synchronously reads from a queue.
 
 Note that the FetchResponses Servlet is not a Listener, rather it synchronously tries to `receive` from the Queue.
 
-1. Modify MyQueueListener to write to myQueue3 instead of myQueue2.
+1. Modify MyQueueListener to write to myQueue3 instead of myQueue2 (so MyQueueListener2 does not play a role here).
 2. Create a new Servlet called FetchResponses that reads all available messages in myQueue3 and displays them on a web page.  
  - If no messages are available, the servlet should clearly state that on the response page.
  - If there are one or more messages in the Queue, all should be displayed.
+ - Remember to set up the @WebServlet urlPatterns string, like usual for a servlet.
+ - Run FetchResponses manually from a browser (using the urlPatterns string) to test it.
 
  Test Task 3 by using MyQueueWriter a few times, then use FetchResponses to retrieve the messages.  
+
+ You should know the difference between an app that is **driven** by the queue versus one that simply **reads** from the queue. The former is similar to a servlet that is **driven** by doGet messages (or other HTTP verbs).
 
  Here are some code hints for synchronously receiving from a Queue:
 
@@ -104,4 +108,4 @@ while ((tm = (TextMessage) reader.receive(1000)) != null) {
 }
 
 ```
-:checkered_flag: **FINISH: Show a working Task 3 to any TA (not just your lab TA) before next Wednesday 2:00pm**
+:checkered_flag: **FINISH: Show a working Task 3 to any TA (not just your lab TA) before next Monday 2:00pm**
