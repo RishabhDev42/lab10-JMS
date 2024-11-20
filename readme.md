@@ -16,6 +16,9 @@ Task 1 just requires cloning a GitHub repository directly into IntelliJ.
 Note: you may have to fix the TomEE version to whatever you have installed.
 
 Click on Run, and you should eventually be sent to a browser with the URL `http://localhost:8080/`  
+
+Note: Some people are 404-ing on the URL above; if so, try `http://localhost:8080/web-10`
+
 (You may run into configuration issues to resolve regarding choosing your level of Java and TomEE - for example, you may have a new version of TomEE. Adjust them to fit your configuration.)
 7. In the browser, enter a message in the input box, replacing "Enter text here", and click on "Submit text to servlet".
 8. You should get a message that your text has been written to the queue.
