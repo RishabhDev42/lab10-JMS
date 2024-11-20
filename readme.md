@@ -13,11 +13,12 @@ Task 1 just requires cloning a GitHub repository directly into IntelliJ.
 5. A popup window may say "Frameworks Detected", but you can ignore and close it.
 6. Once the project has fully loaded, you will have two subdirectories in the Project window - one labeled **mdb**, which contains MyQueueListenter, and one labeled **web**, which contains MyQueueWriter. 
 
-Note: you may have to fix the TomEE version to whatever you have installed.
-
 Click on Run, and you should eventually be sent to a browser with the URL `http://localhost:8080/`  
 
-Note: Some people are 404-ing on the URL above; if so, try `http://localhost:8080/web-10`
+## Note
+You may have to fix the TomEE version to whatever you have installed.
+You may have to fix the JDK version. If you have 21 installed, use that: change the settings in Project Structure (there are three places, I think) and in the web servlet's Edit Configurations (one place).
+Some people are 404-ing on the URL above; if so, try `http://localhost:8080/web-10`
 
 (You may run into configuration issues to resolve regarding choosing your level of Java and TomEE - for example, you may have a new version of TomEE. Adjust them to fit your configuration.)
 7. In the browser, enter a message in the input box, replacing "Enter text here", and click on "Submit text to servlet".
