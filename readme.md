@@ -14,7 +14,9 @@ Task 1 just requires cloning a GitHub repository directly into IntelliJ.
 4. When asked whether to "Trust Maven Project", click "Trust Project".
 5. A popup window may say "Frameworks Detected", but you can ignore and close it.
 6. Once the project has fully loaded, you will have two subdirectories in the Project window - one labeled **mdb**, which contains MyQueueListenter, and one labeled **web**, which contains MyQueueWriter. 
-
+7. Go to File> Project Structure> Project> SDK and choose Oracle Open JDK 22.0.2
+8. Go tot Edit Configuration in your run settings and click edit on TomEE. Choose version 22 as your JRE.
+9. 
 Click on Run, and you should eventually be sent to a browser with the URL `http://localhost:8080/`  
 
 You may have to fix the TomEE version to whatever you have installed.
